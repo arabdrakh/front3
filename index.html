@@ -3,110 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 4 - Responsive Portfolio | Aruzhan Abdrakhmanova</title>
+    <title>Assignment 3 - Responsive Web Design | Aruzhan Abdrakhmanova</title>
 
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Task 3 & 4: Navigation Bar */
+        .navbar-custom {
+            background-color: black;
+        }
+
+        .navbar-brand {
+            color: hotpink !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: pink !important;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+        }
+
+        /* Section Headings */
+        .section-title {
+            color: black;
+            border-bottom: 2px solid hotpink;
+            padding-bottom: 6px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* Task 0: Responsive Typography */
+        h1 {
+            font-size: 22px;
+            color: black;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: black;
+        }
+
+        p {
+            font-size: 14px;
+            color: black;
+            line-height: 1.5;
+        }
+
+        /* Task 1: 3 Boxes Layout using pure CSS media queries */
+        .boxes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .box {
+            background-color: lightpink;
+            border: 2px solid black;
+            border-radius: 6px;
+            padding: 15px;
+            color: black;
+        }
+
+        /* Task 2: Bootstrap 12-Column Boxes */
+        .col-box {
+            background-color: white;
+            border: 2px solid hotpink;
+            border-radius: 6px;
+            padding: 15px;
+            height: 100%;
+            color: black;
+        }
+
+        /* Task 4: Portfolio Cards & Sidebar */
+        .project-card {
+            background-color: white;
+            border: 2px solid pink;
+            border-radius: 6px;
+            padding: 15px;
+            height: 100%;
+            color: black;
+        }
+
+        .project-btn {
+            background-color: black;
+            color: pink;
+            text-decoration: none;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .project-btn:hover {
+            background-color: hotpink;
+            color: black;
+        }
+
+        .sidebar-box {
+            background-color: lightpink;
+            border: 2px solid black;
+            border-radius: 6px;
+            padding: 20px;
+            color: black;
+        }
+
+        /* Element Visibility: hidden on mobile, display: block on tablet/desktop */
+        .extra-info {
+            display: none;
+            color: deeppink;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: pink;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Media Queries for Tablet (>= 600px) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .boxes {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .extra-info {
+                display: block;
+            }
+        }
+
+        /* Media Queries for Desktop (>= 900px) */
+        @media (min-width: 900px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .boxes {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 1. Header with Bootstrap Navbar -->
+    <!-- Task 3: Bootstrap Responsive Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
             <div class="container">
-                <a class="navbar-brand fw-bold text-info" href="index.html">Aruzhan's Portfolio</a>
+                <a class="navbar-brand" href="#">Aruzhan's Web</a>
 
                 <button class="navbar-toggler" type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#portfolioNav">
+                        data-bs-target="#mainNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="portfolioNav">
+                <div class="collapse navbar-collapse" id="mainNavbar">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" href="#projects">Projects</a>
-                        <a class="nav-link" href="#about">About</a>
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#task0">Task 0</a>
+                        <a class="nav-link" href="#task1">Task 1</a>
+                        <a class="nav-link" href="#task2">Task 2</a>
+                        <a class="nav-link" href="#task4">Portfolio</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- 2. Main Section: Left side (Projects) & Right side (Sidebar) -->
-    <main class="container">
-        <div class="row g-4">
+    <main class="container py-3">
 
-            <!-- Left side: Portfolio projects arranged with Bootstrap grid -->
-            <section class="col-lg-8" id="projects">
-                <h1>Task 4. Responsive Portfolio</h1>
-                <p class="text-secondary mb-4">
-                    Student works arranged with Bootstrap's grid system (<code>col-md-6</code>) and custom media queries.
-                </p>
-
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="project-card">
-                            <h2 class="h5 fw-bold text-dark">Assignment 1</h2>
-                            <p class="text-muted small">HTML & CSS Basics — Semantic elements, structure, and base styling.</p>
-                            <a href="task0.html" class="btn btn-sm btn-outline-primary">View Task 0</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="project-card">
-                            <h2 class="h5 fw-bold text-dark">Assignment 2</h2>
-                            <p class="text-muted small">Tables & Forms — Accessible forms, table layout, and input validation.</p>
-                            <a href="task1.html" class="btn btn-sm btn-outline-primary">View Task 1</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="project-card">
-                            <h2 class="h5 fw-bold text-dark">Assignment 3 (Grid)</h2>
-                            <p class="text-muted small">Bootstrap Grid — Responsive 12-column columns and layout breakpoints.</p>
-                            <a href="task2.html" class="btn btn-sm btn-outline-primary">View Task 2</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="project-card">
-                            <h2 class="h5 fw-bold text-dark">Assignment 3 (Navbar)</h2>
-                            <p class="text-muted small">Bootstrap Navbar — Brand logo, links, and mobile hamburger toggle.</p>
-                            <a href="task3.html" class="btn btn-sm btn-outline-primary">View Task 3</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Right side: Sidebar with personal info and contact details -->
-            <aside class="col-lg-4" id="about">
-                <div class="sidebar-box">
-                    <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">About Me</h2>
-                    <p class="mb-1"><strong>Name:</strong> Aruzhan Abdrakhmanova</p>
-                    <p class="mb-1"><strong>Group:</strong> IT-2501</p>
-                    <p class="mb-1"><strong>University:</strong> Astana IT University</p>
-                    <p class="mb-1"><strong>Email:</strong> <a href="mailto:aruzhan@astanait.edu.kz" class="text-decoration-none">aruzhan@astanait.edu.kz</a></p>
-                    <p class="extra-info mt-2 mb-0">Information Technology student focusing on Front-End Web Development.</p>
-
-                    <div class="border-top pt-3 mt-3" id="contact">
-                        <h3 class="h6 fw-bold text-dark mb-2">Contacts</h3>
-                        <p class="small text-secondary mb-1">Location: Astana, Kazakhstan</p>
-                        <p class="small text-secondary mb-0">GitHub: <a href="https://github.com/arabdrakh" target="_blank" class="text-decoration-none">github.com/arabdrakh</a></p>
-                    </div>
-                </div>
-            </aside>
-
+        <!-- Student Info Header -->
+        <div class="mb-3">
+            <h1>Assignment #3: Responsive Web Design</h1>
+            <p><strong>Student:</strong> Aruzhan Abdrakhmanova | <strong>Group:</strong> IT-2501</p>
         </div>
+
+        <!-- ========================================================
+             Part 1. Media Queries
+             Task 0. Responsive Typography
+             ======================================================== -->
+        <section id="task0">
+            <h2 class="section-title">Task 0. Responsive Typography</h2>
+            <p>
+                This text scales dynamically using CSS media queries. Small font on mobile, medium font on tablet (600px), and larger font on desktop (900px).
+            </p>
+        </section>
+
+        <!-- ========================================================
+             Part 1. Media Queries
+             Task 1. Responsive Layout with Media Queries
+             ======================================================== -->
+        <section id="task1">
+            <h2 class="section-title">Task 1. Responsive Layout with Media Queries</h2>
+            <p>
+                Three boxes built with pure CSS (no Bootstrap). Stacked on mobile, 2 boxes in a row on tablet, and all 3 boxes side by side on desktop.
+            </p>
+
+            <div class="boxes">
+                <div class="box">
+                    <h3>Box 1</h3>
+                    <p>Mobile: stacked vertically (1 column).</p>
+                </div>
+                <div class="box">
+                    <h3>Box 2</h3>
+                    <p>Tablet: two boxes in first row.</p>
+                </div>
+                <div class="box">
+                    <h3>Box 3</h3>
+                    <p>Desktop: all three side by side.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             Part 2. Bootstrap Grid System
+             Task 2. Bootstrap Responsive Columns
+             ======================================================== -->
+        <section id="task2">
+            <h2 class="section-title">Task 2. Bootstrap Responsive Columns</h2>
+            <p>
+                Layout using Bootstrap’s 12-column grid system (<code>col-12 col-md-6 col-lg-4</code>).
+            </p>
+
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-box">
+                        <h4>Column 1</h4>
+                        <p>Desktop: 4 columns each (3 equal parts).</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-box">
+                        <h4>Column 2</h4>
+                        <p>Tablet: 2 columns on first row.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-box">
+                        <h4>Column 3</h4>
+                        <p>Tablet: 1 column on second row.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================
+             Part 3. Combined Project
+             Task 4. Responsive Portfolio Page
+             ======================================================== -->
+        <section id="task4">
+            <h2 class="section-title">Task 4. Responsive Portfolio Page</h2>
+
+            <div class="row g-4">
+                <!-- Left side: Portfolio projects -->
+                <div class="col-lg-8">
+                    <h3>My Projects</h3>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="project-card">
+                                <h4>Assignment 1</h4>
+                                <p>HTML & CSS Basics.</p>
+                                <a href="#" class="project-btn">View Project</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card">
+                                <h4>Assignment 2</h4>
+                                <p>Tables & Forms.</p>
+                                <a href="#" class="project-btn">View Project</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card">
+                                <h4>Assignment 3</h4>
+                                <p>Responsive Web Design.</p>
+                                <a href="#" class="project-btn">View Project</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="project-card">
+                                <h4>Final Project</h4>
+                                <p>Personal Portfolio Website.</p>
+                                <a href="#" class="project-btn">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Sidebar with personal info -->
+                <div class="col-lg-4">
+                    <div class="sidebar-box">
+                        <h3>About Me</h3>
+                        <p><strong>Name:</strong> Aruzhan Abdrakhmanova</p>
+                        <p><strong>Group:</strong> IT-2501</p>
+                        <p><strong>Email:</strong> aruzhan@astanait.edu.kz</p>
+                        <p class="extra-info">Information Technology student at Astana IT University.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- 3. Footer across the bottom -->
-    <footer class="text-center">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <p class="mb-0">&copy; 2026 Aruzhan Abdrakhmanova | IT-2501 | Astana IT University</p>
+            <p style="color: pink; margin: 0;">&copy; 2026 Aruzhan Abdrakhmanova | IT-2501 | Astana IT University</p>
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
