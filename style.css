@@ -1,0 +1,263 @@
+/* ========================================================
+   Assignment #3: Responsive Portfolio Page
+   Student: Aruzhan Abdrakhmanova
+   Group: IT-2501
+   File: style.css
+   ======================================================== */
+
+/* General base styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* Quick navigation for assignment grading */
+.assignment-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.assignment-nav a {
+    color: #0d6efd;
+    text-decoration: none;
+    margin-right: 14px;
+}
+
+.assignment-nav a:hover {
+    text-decoration: underline;
+}
+
+.assignment-nav a.active {
+    font-weight: bold;
+    color: #212529;
+}
+
+/* Hero section */
+.hero-section {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 30px 0;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 8px;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Section headings */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #212529;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0d6efd;
+    margin-bottom: 20px;
+}
+
+/* Project Cards */
+.project-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 18px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Sidebar Styles */
+.sidebar-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.avatar-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.contact-item {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-label {
+    font-weight: bold;
+    min-width: 75px;
+    color: #495057;
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #adb5bd;
+    font-size: 14px;
+    padding: 24px 0;
+    margin-top: 40px;
+}
+
+/* ========================================================
+   CUSTOM MEDIA QUERIES (Task 4 Requirement)
+   Adjusting font sizes, spacing, and element visibility
+   ======================================================== */
+
+/* Mobile view (< 768px) */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 20px 0;
+    }
+
+    .hero-title {
+        font-size: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .project-card {
+        padding: 14px;
+    }
+
+    .project-title {
+        font-size: 15px;
+    }
+
+    .project-desc {
+        font-size: 13px;
+    }
+
+    .avatar-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    /* Hide non-essential desktop helper text on mobile to keep view compact */
+    .desktop-only-note {
+        display: none !important;
+    }
+
+    .mobile-notice {
+        display: block !important;
+    }
+}
+
+/* Tablet view (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section {
+        padding: 25px 0;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .mobile-notice {
+        display: none;
+    }
+}
+
+/* Desktop view (>= 992px) */
+@media (min-width: 992px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    .project-title {
+        font-size: 17px;
+    }
+
+    /* Sticky sidebar on large screens */
+    .sidebar-sticky {
+        position: sticky;
+        top: 20px;
+    }
+
+    .mobile-notice {
+        display: none;
+    }
+}
