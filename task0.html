@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 0 - Responsive Typography | Aruzhan Abdrakhmanova</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        /* Top navigation for grading */
+        .task-nav {
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            background: #fff;
+            padding: 12px 18px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .task-nav a {
+            text-decoration: none;
+            color: #0d6efd;
+            font-size: 14px;
+        }
+
+        .task-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .task-nav a.active {
+            font-weight: bold;
+            color: #212529;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .student-header {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Current screen indicator */
+        .breakpoint-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .badge-mobile { display: inline-block; background-color: #fff3cd; color: #856404; }
+        .badge-tablet { display: none; background-color: #d1ecf1; color: #0c5460; }
+        .badge-desktop { display: none; background-color: #d4edda; color: #155724; }
+
+        /* Mobile styles (default) */
+        h1 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .info-box {
+            background-color: #f1f3f5;
+            border-left: 4px solid #0d6efd;
+            padding: 12px 16px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #495057;
+        }
+
+        /* Tablet breakpoint (768px to 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .badge-mobile { display: none; }
+            .badge-tablet { display: inline-block; }
+            .badge-desktop { display: none; }
+
+            .container {
+                padding: 32px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .info-box {
+                font-size: 15px;
+            }
+        }
+
+        /* Desktop breakpoint (>= 1024px) */
+        @media (min-width: 1024px) {
+            .badge-mobile { display: none; }
+            .badge-tablet { display: none; }
+            .badge-desktop { display: inline-block; }
+
+            .container {
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .info-box {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task Navigation -->
+    <nav class="task-nav">
+        <a href="task0.html" class="active">Task 0: Typography</a>
+        <a href="task1.html">Task 1: Boxes Layout</a>
+        <a href="task2.html">Task 2: Bootstrap Grid</a>
+        <a href="task3.html">Task 3: Bootstrap Navbar</a>
+        <a href="index.html">Task 4: Portfolio</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="student-header">
+            <strong>Assignment #3: Part 1 - Task 0</strong> | Aruzhan Abdrakhmanova (Group IT-2501)
+        </div>
+
+        <span class="breakpoint-badge badge-mobile">Current Screen: Mobile View (&lt; 768px)</span>
+        <span class="breakpoint-badge badge-tablet">Current Screen: Tablet View (768px - 1023px)</span>
+        <span class="breakpoint-badge badge-desktop">Current Screen: Desktop View (&ge; 1024px)</span>
+
+        <h1>Responsive Typography with Media Queries</h1>
+        <p>
+            Responsive typography is an essential part of modern web design. Instead of using fixed font sizes that only look good on one display, we use CSS media queries to adapt font sizes progressively according to the user's screen size.
+        </p>
+
+        <h2>Why Font Sizing Matters on Different Devices</h2>
+        <p>
+            On mobile screens, overly large titles take up too much vertical space and cause awkward word breaks. On desktop monitors, small mobile text is difficult to read from a standard viewing distance. Media queries allow us to solve this problem cleanly.
+        </p>
+
+        <h2>Typography Breakpoints Used</h2>
+        <p>
+            In this task, we set up three different font size tiers:
+            mobile devices use compact sizes (H1: 22px, P: 14px), tablets use medium sizes (H1: 30px, P: 16px), and desktop displays use large, comfortable sizes (H1: 38px, P: 18px).
+        </p>
+
+        <div class="info-box">
+            Resize the browser window or use DevTools device mode to observe how the heading sizes and body text scale smoothly between mobile, tablet, and desktop viewports.
+        </div>
+    </main>
+
+</body>
+</html>
