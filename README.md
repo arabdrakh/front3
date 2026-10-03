@@ -9,16 +9,16 @@
 
 ## 📌 Project Overview
 
-The objective of this assignment is to master responsive web design principles using both **pure CSS Media Queries** and the **Bootstrap 5 12-Column Grid System**. The project demonstrates how layouts and typography dynamically adapt to mobile, tablet, and desktop viewport sizes.
+The objective of this assignment is to master responsive web design principles using both **pure CSS Media Queries** and the **Bootstrap 5 12-Column Grid System**. The project demonstrates how layouts and typography dynamically adapt to mobile, tablet, and desktop viewports.
 
 ### 📁 File Structure
 
 ```text
 front3/
-├── index.html          # Task 4: Main Responsive Portfolio Page
+├── index.html          # Task 4: Responsive Portfolio Page
 ├── style.css           # Task 4: Custom CSS with custom media queries
 ├── task0.html          # Task 0: Responsive Typography (Pure CSS)
-├── task1.html          # Task 1: Responsive 3-Box Layout (Pure CSS Media Queries)
+├── task1.html          # Task 1: Responsive 3-Box Layout (Pure CSS Grid & Media Queries)
 ├── task2.html          # Task 2: Bootstrap 12-Column Responsive Grid
 ├── task3.html          # Task 3: Bootstrap Responsive Navigation Bar
 ├── screenshots/        # Captured screenshots for all tasks across viewports
@@ -33,9 +33,9 @@ front3/
 
 - **Description:**  
   A webpage created with semantic headings (`h1`, `h2`) and paragraphs (`p`). Pure CSS media queries adapt the font sizes across mobile, tablet, and desktop viewports without any external CSS framework.
-  - **Mobile (`< 768px`):** `h1`: 22px, `h2`: 18px, `p`: 14px
-  - **Tablet (`768px` – `1023px`):** `h1`: 30px, `h2`: 24px, `p`: 16px
-  - **Desktop (`≥ 1024px`):** `h1`: 38px, `h2`: 28px, `p`: 18px
+  - **Mobile (< 768px):** `h1`: 20px, `h2`: 16px, `p`: 14px
+  - **Tablet (768px – 1023px):** `h1`: 28px, `h2`: 20px, `p`: 16px
+  - **Desktop (≥ 1024px):** `h1`: 36px, `h2`: 24px, `p`: 18px
 
 #### Task 0 Screenshots
 
@@ -53,20 +53,20 @@ front3/
 ### Task 1. Responsive Layout with Media Queries
 
 - **Description:**  
-  A responsive layout with three content boxes built strictly using pure CSS Media Queries and Flexbox (no Bootstrap).
-  - **Desktop (`≥ 1024px`):** All 3 boxes are displayed side by side (`width: calc((100% - 40px) / 3)`).
-  - **Tablet (`768px` – `1023px`):** 2 boxes on the first row, and the third box wraps to the second row (`width: calc(50% - 10px)`).
-  - **Mobile (`< 768px`):** All boxes are stacked vertically at full width (`width: 100%`).
+  A responsive layout with three content boxes built strictly using pure CSS Grid and Media Queries (no Bootstrap).
+  - **Desktop (≥ 900px):** All 3 boxes are displayed side by side (`grid-template-columns: 1fr 1fr 1fr`).
+  - **Tablet (600px – 899px):** 2 boxes on the first row, and the third box wraps to the second row (`grid-template-columns: 1fr 1fr`).
+  - **Mobile (< 600px):** All boxes are stacked vertically at full width (`grid-template-columns: 1fr`).
 
 #### Task 1 Screenshots
 
-**Desktop View (≥ 1024px) — 3 side by side:**
+**Desktop View (≥ 900px) — 3 side by side:**
 ![Task 1 Desktop](screenshots/task1-desktop.png)
 
-**Tablet View (768px - 1023px) — 2 in first row, 1 in second row:**
+**Tablet View (600px - 899px) — 2 in first row, 1 in second row:**
 ![Task 1 Tablet](screenshots/task1-tablet.png)
 
-**Mobile View (< 768px) — Stacked vertically:**
+**Mobile View (< 600px) — Stacked vertically:**
 ![Task 1 Mobile](screenshots/task1-mobile.png)
 
 ---
@@ -80,7 +80,7 @@ front3/
   - Each column uses the class `col-12 col-md-6 col-lg-4`.
   - **Desktop (`lg` ≥ 992px):** Each card occupies 4 columns (4 + 4 + 4 = 12 columns, 3 equal parts side by side).
   - **Tablet (`md` 768px – 991px):** Each card occupies 6 columns, resulting in 2 columns on the first row (6 + 6 = 12) and the third column wrapping to the second row.
-  - **Mobile (`< 768px`):** Each card takes 12 columns (`col-12`), stacking all cards vertically.
+  - **Mobile (< 768px):** Each card takes 12 columns (`col-12`), stacking all cards vertically.
 
 #### Task 2 Screenshots
 
@@ -99,9 +99,9 @@ front3/
 
 - **Description:**  
   A responsive navbar built using Bootstrap 5 components:
-  - **Logo on the left:** Brand name (`<Aruzhan/> WebDev`) aligned using `.navbar-brand`.
+  - **Logo on the left:** Brand name (`Aruzhan`) aligned using `.navbar-brand`.
   - **Links on the right:** Navigation links right-aligned using Bootstrap's `ms-auto` class.
-  - **Collapsible menu:** When the viewport width is below the `lg` breakpoint (`< 992px`), navigation links collapse into an accessible hamburger menu (`navbar-toggler`) that opens and closes smoothly via Bootstrap JS.
+  - **Collapsible menu:** When the viewport width is below the `md` breakpoint (< 768px), navigation links collapse into an accessible hamburger menu (`navbar-toggler`) that opens and closes via Bootstrap JS.
 
 #### Task 3 Screenshots
 
@@ -121,13 +121,13 @@ front3/
   A complete personal portfolio page combining both Bootstrap 5 Grid and custom CSS Media Queries in `style.css`:
   1. **Header:** Responsive Bootstrap navbar with logo on the left, collapsible hamburger toggler, and navigation links.
   2. **Main Section:**
-     - **Left Side (`col-12 col-lg-8`):** Portfolio project cards arranged using Bootstrap grid (`col-12 col-md-6`).
-     - **Right Side (`col-12 col-lg-4`):** Sidebar containing personal information, student bio, technical skills, and contact details.
+     - **Left Side (`col-lg-8`):** Portfolio project cards arranged using Bootstrap grid (`col-md-6`).
+     - **Right Side (`col-lg-4`):** Sidebar containing personal information, student bio, and contact details.
   3. **Footer:** Bottom footer with copyright and university affiliation.
   4. **Custom Media Queries (`style.css`):**
-     - Adjusts typography scale across mobile, tablet, and desktop.
-     - Controls spacing (card padding, section margins).
-     - Manages element visibility (hiding non-essential notes on mobile, enabling sticky sidebar on desktop).
+     - Adjusts typography (`h1` scales from 24px to 30px and 36px).
+     - Controls spacing (`main` padding scales from 15px to 25px and 35px).
+     - Element visibility: `.extra-info` is hidden on mobile (`display: none;`) and shown on tablet/desktop via `display: block;`.
 
 #### Task 4 Screenshots
 
@@ -144,25 +144,22 @@ front3/
 
 ## 📝 Brief Summary of Work Process
 
-1. **Studying Fundamentals & Breakpoints:**  
-   Reviewed standard CSS media query syntax and Bootstrap's breakpoint system (`sm: 576px`, `md: 768px`, `lg: 992px`, `xl: 1200px`).
+1. **Part 1 — Pure Media Queries:**  
+   - Built `task0.html` to demonstrate responsive typography across mobile, tablet, and desktop viewports using CSS media queries.
+   - Built `task1.html` using CSS Grid (`1fr`, `1fr 1fr`, `1fr 1fr 1fr`) to implement the 3-box responsive layout without any framework.
 
-2. **Part 1 — Pure Media Queries:**  
-   - Implemented `task0.html` to demonstrate responsive typography, scaling headings and body text progressively without any framework.
-   - Built `task1.html` using CSS Flexbox with calculated widths (`calc()`) to achieve 3 boxes side by side on desktop, 2 on tablet, and 1 on mobile.
+2. **Part 2 — Bootstrap 5 Grid & Navbar:**  
+   - Implemented `task2.html` using Bootstrap’s 12-column grid (`col-12 col-md-6 col-lg-4`) to satisfy responsive column wrapping requirements.
+   - Implemented `task3.html` using the Bootstrap navbar component with logo on the left, `ms-auto` links on the right, and hamburger toggler for smaller viewports.
 
-3. **Part 2 — Bootstrap 5 Grid & Navbar:**  
-   - Created `task2.html` using the 12-column grid (`col-12 col-md-6 col-lg-4`) to satisfy exact column wrapping requirements.
-   - Built `task3.html` using the Bootstrap `navbar` component with brand logo on the left, `ms-auto` for right alignment, and `navbar-toggler` for mobile collapsing.
+3. **Part 3 — Combined Portfolio Page:**  
+   - Created `index.html` and `style.css` combining Bootstrap's grid structure for projects with custom media queries for font scaling, spacing, and element visibility (`display: block` on `.extra-info`).
+   - Styled the site with a clean, distinctive color theme suitable for front-end student coursework.
 
-4. **Part 3 — Combined Portfolio Page:**  
-   - Developed `index.html` and `style.css` combining Bootstrap's grid structure for the layout with custom media queries for font scaling, padding, and element visibility.
-   - Kept the code and visual design clean, structured, and realistic according to practical academic standards.
-
-5. **Testing & Verification:**  
-   - Tested each page across multiple screen dimensions (Mobile: 480px, Tablet: 850px, Desktop: 1200px).
-   - Captured real screenshots of all tasks across breakpoints for the report.
-   - Committed each task incrementally with clear Git commit messages.
+4. **Testing & Version Control:**  
+   - Tested each page across multiple screen dimensions (Mobile: 420px, Tablet: 750px–800px, Desktop: 1100px).
+   - Captured screenshots across all breakpoints and updated the report.
+   - Maintained clean, step-by-step Git commits.
 
 ---
 
