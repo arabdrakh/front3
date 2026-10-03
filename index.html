@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3 - Responsive Web Design | Aruzhan Abdrakhmanova</title>
+    <title>Assignment 3</title>
 
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            
             background-color: white;
             color: black;
             margin: 0;
             padding: 0;
         }
 
-        /* Task 3 & 4: Navigation Bar */
         .navbar-custom {
             background-color: black;
         }
 
-        .navbar-brand {
-            color: hotpink !important;
+        .navbar-custom .navbar-brand {
+            color: hotpink;
             font-weight: bold;
         }
 
-        .nav-link {
-            color: pink !important;
+        .navbar-custom .nav-link {
+            color: pink;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: white !important;
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: white;
         }
 
-        /* Section Headings */
+        
         .section-title {
             color: black;
             border-bottom: 2px solid hotpink;
@@ -44,7 +43,6 @@
             margin-bottom: 15px;
         }
 
-        /* Task 0: Responsive Typography */
         h1 {
             font-size: 22px;
             color: black;
@@ -61,7 +59,6 @@
             line-height: 1.5;
         }
 
-        /* Task 1: 3 Boxes Layout using pure CSS media queries */
         .boxes {
             display: grid;
             grid-template-columns: 1fr;
@@ -76,7 +73,6 @@
             color: black;
         }
 
-        /* Task 2: Bootstrap 12-Column Boxes */
         .col-box {
             background-color: white;
             border: 2px solid hotpink;
@@ -86,7 +82,6 @@
             color: black;
         }
 
-        /* Task 4: Portfolio Cards & Sidebar */
         .project-card {
             background-color: white;
             border: 2px solid pink;
@@ -100,7 +95,6 @@
             background-color: black;
             color: pink;
             text-decoration: none;
-            display: inline-block;
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 13px;
@@ -120,7 +114,6 @@
             color: black;
         }
 
-        /* Element Visibility: hidden on mobile, display: block on tablet/desktop */
         .extra-info {
             display: none;
             color: deeppink;
@@ -128,7 +121,6 @@
             margin-top: 10px;
         }
 
-        /* Footer */
         footer {
             background-color: black;
             color: pink;
@@ -137,7 +129,6 @@
             margin-top: 40px;
         }
 
-        /* Media Queries for Tablet (>= 600px) */
         @media (min-width: 600px) {
             h1 {
                 font-size: 28px;
@@ -160,7 +151,6 @@
             }
         }
 
-        /* Media Queries for Desktop (>= 900px) */
         @media (min-width: 900px) {
             h1 {
                 font-size: 36px;
@@ -182,7 +172,6 @@
 </head>
 <body>
 
-    <!-- Task 3: Bootstrap Responsive Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
             <div class="container">
@@ -208,90 +197,74 @@
 
     <main class="container py-3">
 
-        <!-- Student Info Header -->
         <div class="mb-3">
-            <h1>Assignment #3: Responsive Web Design</h1>
-            <p><strong>Student:</strong> Aruzhan Abdrakhmanova | <strong>Group:</strong> IT-2501</p>
+            <h1>Assignment 3</h1>
+            <p>Aruzhan IT-2501</p>
         </div>
 
-        <!-- ========================================================
-             Part 1. Media Queries
-             Task 0. Responsive Typography
-             ======================================================== -->
+       
         <section id="task0">
             <h2 class="section-title">Task 0. Responsive Typography</h2>
             <p>
-                This text scales dynamically using CSS media queries. Small font on mobile, medium font on tablet (600px), and larger font on desktop (900px).
+                text text text
             </p>
         </section>
 
-        <!-- ========================================================
-             Part 1. Media Queries
-             Task 1. Responsive Layout with Media Queries
-             ======================================================== -->
+    
         <section id="task1">
             <h2 class="section-title">Task 1. Responsive Layout with Media Queries</h2>
             <p>
-                Three boxes built with pure CSS (no Bootstrap). Stacked on mobile, 2 boxes in a row on tablet, and all 3 boxes side by side on desktop.
+                pure CSS
             </p>
 
             <div class="boxes">
                 <div class="box">
                     <h3>Box 1</h3>
-                    <p>Mobile: stacked vertically (1 column).</p>
+                    <p>Mobile.</p>
                 </div>
                 <div class="box">
                     <h3>Box 2</h3>
-                    <p>Tablet: two boxes in first row.</p>
+                    <p>Tablet</p>
                 </div>
                 <div class="box">
                     <h3>Box 3</h3>
-                    <p>Desktop: all three side by side.</p>
+                    <p>Desktop</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================================
-             Part 2. Bootstrap Grid System
-             Task 2. Bootstrap Responsive Columns
-             ======================================================== -->
         <section id="task2">
             <h2 class="section-title">Task 2. Bootstrap Responsive Columns</h2>
             <p>
-                Layout using Bootstrap’s 12-column grid system (<code>col-12 col-md-6 col-lg-4</code>).
+                Bootstrap
             </p>
 
             <div class="row g-3">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="col-box">
                         <h4>Column 1</h4>
-                        <p>Desktop: 4 columns each (3 equal parts).</p>
+                        <p>Desktop</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="col-box">
                         <h4>Column 2</h4>
-                        <p>Tablet: 2 columns on first row.</p>
+                        <p>Tablet</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="col-box">
                         <h4>Column 3</h4>
-                        <p>Tablet: 1 column on second row.</p>
+                        <p>Mobile</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========================================================
-             Part 3. Combined Project
-             Task 4. Responsive Portfolio Page
-             ======================================================== -->
         <section id="task4">
             <h2 class="section-title">Task 4. Responsive Portfolio Page</h2>
 
             <div class="row g-4">
-                <!-- Left side: Portfolio projects -->
                 <div class="col-lg-8">
                     <h3>My Projects</h3>
 
@@ -299,7 +272,7 @@
                         <div class="col-md-6">
                             <div class="project-card">
                                 <h4>Assignment 1</h4>
-                                <p>HTML & CSS Basics.</p>
+                                <p>HTML and CSS basics.</p>
                                 <a href="#" class="project-btn">View Project</a>
                             </div>
                         </div>
@@ -307,7 +280,7 @@
                         <div class="col-md-6">
                             <div class="project-card">
                                 <h4>Assignment 2</h4>
-                                <p>Tables & Forms.</p>
+                                <p>Flex grrrid</p>
                                 <a href="#" class="project-btn">View Project</a>
                             </div>
                         </div>
@@ -315,29 +288,28 @@
                         <div class="col-md-6">
                             <div class="project-card">
                                 <h4>Assignment 3</h4>
-                                <p>Responsive Web Design.</p>
+                                <p>Responsive web design</p>
                                 <a href="#" class="project-btn">View Project</a>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="project-card">
-                                <h4>Final Project</h4>
-                                <p>Personal Portfolio Website.</p>
+                                <h4>Midterm</h4>
+                                <p>Cafe</p>
                                 <a href="#" class="project-btn">View Project</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right side: Sidebar with personal info -->
                 <div class="col-lg-4">
                     <div class="sidebar-box">
                         <h3>About Me</h3>
                         <p><strong>Name:</strong> Aruzhan Abdrakhmanova</p>
                         <p><strong>Group:</strong> IT-2501</p>
-                        <p><strong>Email:</strong> aruzhan@astanait.edu.kz</p>
-                        <p class="extra-info">Information Technology student at Astana IT University.</p>
+                        <p><strong>Email:</strong> 252465@astanait.edu.kz</p>
+                        <p class="extra-info">AITU</p>
                     </div>
                 </div>
             </div>
@@ -345,14 +317,12 @@
 
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="color: pink; margin: 0;">&copy; 2026 Aruzhan Abdrakhmanova | IT-2501 | Astana IT University</p>
+            <p style="color: pink; margin: 0;">Aruzhan Abdrakhmanova IT-2501 Astana IT University</p>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
