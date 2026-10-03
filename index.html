@@ -3,232 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aruzhan Abdrakhmanova - Portfolio | Assignment #3</title>
+    <title>Task 4 - Responsive Portfolio | Aruzhan Abdrakhmanova</title>
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS with Media Queries -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Assignment Task Switcher Navigation -->
-    <div class="assignment-nav">
-        <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2 py-1">
-            <div class="d-flex flex-wrap align-items-center gap-2">
-                <span class="text-muted small fw-bold">Assignment #3:</span>
-                <a href="task0.html" class="small">Task 0</a>
-                <a href="task1.html" class="small">Task 1</a>
-                <a href="task2.html" class="small">Task 2</a>
-                <a href="task3.html" class="small">Task 3</a>
-                <a href="index.html" class="small active">Task 4 (Portfolio)</a>
-            </div>
-            <div class="text-muted small d-none d-md-block">
-                Astana IT University | IT-2501
-            </div>
-        </div>
-    </div>
-
-    <!-- 1. Header with a Bootstrap Navbar (Requirement 1) -->
+    <!-- 1. Header with Bootstrap Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
             <div class="container">
-                <!-- Brand / Logo on left -->
-                <a class="navbar-brand fw-bold" href="index.html">
-                    <span class="text-primary">&lt;Aruzhan/&gt;</span> Abdrakhmanova
-                </a>
+                <a class="navbar-brand fw-bold text-info" href="index.html">Aruzhan's Portfolio</a>
 
-                <!-- Collapsible Hamburger Menu button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNavbar" aria-controls="portfolioNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#portfolioNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Navigation Links on right (ms-auto) -->
-                <div class="collapse navbar-collapse" id="portfolioNavbar">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
+                <div class="collapse navbar-collapse" id="portfolioNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" href="#projects">Projects</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Introduction -->
-    <section class="hero-section" id="about">
-        <div class="container">
-            <h1 class="hero-title">Aruzhan Abdrakhmanova</h1>
-            <p class="hero-subtitle">
-                Student of Group IT-2501 at Astana IT University. Welcome to my web development portfolio demonstrating responsive design using CSS Media Queries and the Bootstrap 12-column grid.
-            </p>
-            <p class="mobile-notice text-primary small mt-2 mb-0" style="display: none;">
-                Viewing in mobile layout mode
-            </p>
-        </div>
-    </section>
-
-    <!-- 2. Main Section: Left side (Projects) & Right side (Sidebar) (Requirement 2) -->
-    <main class="container my-4">
+    <!-- 2. Main Section: Left side (Projects) & Right side (Sidebar) -->
+    <main class="container">
         <div class="row g-4">
-            
-            <!-- Left Side: Portfolio Projects using Bootstrap Grid -->
-            <section class="col-12 col-lg-8" id="projects">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="section-title mb-0">Portfolio Projects</h2>
-                    <span class="badge bg-secondary desktop-only-note">4 Academic Works</span>
-                </div>
-                
-                <p class="text-muted small mb-4">
-                    The project cards below are arranged using Bootstrap's responsive grid system (<code>col-12 col-md-6</code>).
+
+            <!-- Left side: Portfolio projects arranged with Bootstrap grid -->
+            <section class="col-lg-8" id="projects">
+                <h1>Task 4. Responsive Portfolio</h1>
+                <p class="text-secondary mb-4">
+                    Student works arranged with Bootstrap's grid system (<code>col-md-6</code>) and custom media queries.
                 </p>
 
                 <div class="row g-3">
-                    <!-- Project 1 -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-md-6">
                         <div class="project-card">
-                            <div>
-                                <h3 class="project-title">Assignment 1: HTML & CSS Basics</h3>
-                                <p class="project-desc">
-                                    Introduction to semantic HTML elements, text formatting, hyperlinks, and fundamental CSS styling principles.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-2">
-                                    <span class="tag">HTML5</span>
-                                    <span class="tag">CSS3</span>
-                                </div>
-                                <a href="task0.html" class="btn btn-sm btn-outline-primary w-100">View Related Task</a>
-                            </div>
+                            <h2 class="h5 fw-bold text-dark">Assignment 1</h2>
+                            <p class="text-muted small">HTML & CSS Basics — Semantic elements, structure, and base styling.</p>
+                            <a href="task0.html" class="btn btn-sm btn-outline-primary">View Task 0</a>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-md-6">
                         <div class="project-card">
-                            <div>
-                                <h3 class="project-title">Assignment 2: Tables & Forms</h3>
-                                <p class="project-desc">
-                                    Implementation of structured data tables, accessible input forms, validation states, and custom form controls.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-2">
-                                    <span class="tag">HTML5 Forms</span>
-                                    <span class="tag">CSS Grid</span>
-                                </div>
-                                <a href="task1.html" class="btn btn-sm btn-outline-primary w-100">View Related Task</a>
-                            </div>
+                            <h2 class="h5 fw-bold text-dark">Assignment 2</h2>
+                            <p class="text-muted small">Tables & Forms — Accessible forms, table layout, and input validation.</p>
+                            <a href="task1.html" class="btn btn-sm btn-outline-primary">View Task 1</a>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-md-6">
                         <div class="project-card">
-                            <div>
-                                <h3 class="project-title">Assignment 3: Responsive Design</h3>
-                                <p class="project-desc">
-                                    Creation of multi-device web layouts using CSS media queries, Bootstrap 12-column grid, and responsive navbar.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-2">
-                                    <span class="tag">Media Queries</span>
-                                    <span class="tag">Bootstrap 5</span>
-                                </div>
-                                <a href="task2.html" class="btn btn-sm btn-outline-primary w-100">View Related Task</a>
-                            </div>
+                            <h2 class="h5 fw-bold text-dark">Assignment 3 (Grid)</h2>
+                            <p class="text-muted small">Bootstrap Grid — Responsive 12-column columns and layout breakpoints.</p>
+                            <a href="task2.html" class="btn btn-sm btn-outline-primary">View Task 2</a>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-md-6">
                         <div class="project-card">
-                            <div>
-                                <h3 class="project-title">Student Portal Prototype</h3>
-                                <p class="project-desc">
-                                    Front-end prototype for checking university schedules, course materials, and personal academic progress.
-                                </p>
-                            </div>
-                            <div>
-                                <div class="mb-2">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">Bootstrap UI</span>
-                                </div>
-                                <a href="task3.html" class="btn btn-sm btn-outline-primary w-100">View Related Task</a>
-                            </div>
+                            <h2 class="h5 fw-bold text-dark">Assignment 3 (Navbar)</h2>
+                            <p class="text-muted small">Bootstrap Navbar — Brand logo, links, and mobile hamburger toggle.</p>
+                            <a href="task3.html" class="btn btn-sm btn-outline-primary">View Task 3</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Right Side: Sidebar with Personal Info and Contact Details -->
-            <aside class="col-12 col-lg-4">
-                <div class="sidebar-sticky">
-                    <!-- Profile Card -->
-                    <div class="sidebar-card shadow-sm" id="skills">
-                        <div class="avatar-circle">AA</div>
-                        <h3 class="h5 mb-1">Aruzhan Abdrakhmanova</h3>
-                        <p class="text-primary small mb-3">Front-End Development Student</p>
-                        
-                        <p class="text-muted small mb-3">
-                            Currently studying at Astana IT University (Group IT-2501). Interested in modern web technologies, responsive UI design, and front-end engineering.
-                        </p>
+            <!-- Right side: Sidebar with personal info and contact details -->
+            <aside class="col-lg-4" id="about">
+                <div class="sidebar-box">
+                    <h2 class="h5 fw-bold text-dark border-bottom pb-2 mb-3">About Me</h2>
+                    <p class="mb-1"><strong>Name:</strong> Aruzhan Abdrakhmanova</p>
+                    <p class="mb-1"><strong>Group:</strong> IT-2501</p>
+                    <p class="mb-1"><strong>University:</strong> Astana IT University</p>
+                    <p class="mb-1"><strong>Email:</strong> <a href="mailto:aruzhan@astanait.edu.kz" class="text-decoration-none">aruzhan@astanait.edu.kz</a></p>
+                    <p class="extra-info mt-2 mb-0">Information Technology student focusing on Front-End Web Development.</p>
 
-                        <h4 class="h6 fw-bold mb-2">Technical Skills</h4>
-                        <div class="mb-3">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">Media Queries</span>
-                            <span class="tag">Bootstrap 5</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Git & GitHub</span>
-                        </div>
-
-                        <div class="desktop-only-note alert alert-light border p-2 mb-0 small text-muted">
-                            University: Astana IT University<br>
-                            Specialization: Information Technology
-                        </div>
-                    </div>
-
-                    <!-- Contact Details Card -->
-                    <div class="sidebar-card shadow-sm" id="contact">
-                        <h4 class="h6 fw-bold border-bottom pb-2 mb-3">Contact Details</h4>
-                        
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:aruzhan.abdrakhmanova@astanait.edu.kz" class="text-decoration-none text-body small">
-                                aruzhan@astanait.edu.kz
-                            </a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Group:</span>
-                            <span class="small text-secondary">IT-2501</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Location:</span>
-                            <span class="small text-secondary">Astana, Kazakhstan</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">GitHub:</span>
-                            <a href="https://github.com" target="_blank" class="text-decoration-none text-primary small">
-                                github.com
-                            </a>
-                        </div>
-                        <div class="contact-item mb-0">
-                            <span class="contact-label">Telegram:</span>
-                            <span class="small text-secondary">@aruzhan_it</span>
-                        </div>
+                    <div class="border-top pt-3 mt-3" id="contact">
+                        <h3 class="h6 fw-bold text-dark mb-2">Contacts</h3>
+                        <p class="small text-secondary mb-1">Location: Astana, Kazakhstan</p>
+                        <p class="small text-secondary mb-0">GitHub: <a href="https://github.com/arabdrakh" target="_blank" class="text-decoration-none">github.com/arabdrakh</a></p>
                     </div>
                 </div>
             </aside>
@@ -236,17 +100,13 @@
         </div>
     </main>
 
-    <!-- 3. Footer across the bottom (Requirement 3) -->
-    <footer>
-        <div class="container text-center">
-            <p class="mb-1">&copy; 2026 Aruzhan Abdrakhmanova. All rights reserved.</p>
-            <p class="small text-secondary mb-0">
-                Group IT-2501 | Astana IT University | Assignment #3 - Responsive Web Design
-            </p>
+    <!-- 3. Footer across the bottom -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Aruzhan Abdrakhmanova | IT-2501 | Astana IT University</p>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
