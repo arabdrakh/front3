@@ -3,214 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1 - Responsive Layout with Media Queries | Aruzhan Abdrakhmanova</title>
+    <title>Task 1 - Responsive Layout with Media Queries</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            background-color: #f4f6f9;
+            color: #2d3748;
+            margin: 0;
             padding: 20px;
         }
 
-        /* Top navigation for grading */
-        .task-nav {
-            max-width: 960px;
-            margin: 0 auto 20px auto;
-            background: #fff;
-            padding: 12px 18px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .task-nav a {
-            text-decoration: none;
-            color: #0d6efd;
-            font-size: 14px;
-        }
-
-        .task-nav a:hover {
-            text-decoration: underline;
-        }
-
-        .task-nav a.active {
-            font-weight: bold;
-            color: #212529;
-        }
-
-        /* Main container */
         .container {
-            max-width: 960px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 24px;
         }
-
-        .student-header {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Current screen indicator */
-        .breakpoint-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        .badge-mobile { display: inline-block; background-color: #fff3cd; color: #856404; }
-        .badge-tablet { display: none; background-color: #d1ecf1; color: #0c5460; }
-        .badge-desktop { display: none; background-color: #d4edda; color: #155724; }
 
         h1 {
-            font-size: 24px;
-            color: #222;
-            margin-bottom: 10px;
-        }
-
-        .lead {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 25px;
-        }
-
-        /* Three boxes container */
-        .box-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Base box style: Mobile (< 768px) -> 100% width (stacked) */
-        .box {
-            width: 100%;
-            background-color: #ffffff;
-            border: 1px solid #dcdfe6;
-            border-radius: 6px;
-            padding: 20px;
-            transition: box-shadow 0.2s ease;
-        }
-
-        .box:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .box-badge {
-            display: inline-block;
-            background-color: #e7f1ff;
-            color: #0d6efd;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .box h3 {
-            font-size: 18px;
-            color: #2d3748;
+            font-size: 20px;
+            color: #1e3a8a;
             margin-bottom: 8px;
         }
 
-        .box p {
+        p {
             font-size: 14px;
             color: #4a5568;
-            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
-        /* Tablet breakpoint (768px to 1023px): 2 boxes per row */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .badge-mobile { display: none; }
-            .badge-tablet { display: inline-block; }
-            .badge-desktop { display: none; }
+        .boxes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
 
-            .box {
-                width: calc(50% - 10px);
+        .box {
+            background-color: #ffffff;
+            border-top: 4px solid #0284c7;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .box h3 {
+            margin: 0 0 8px 0;
+            color: #1e293b;
+            font-size: 18px;
+        }
+
+        .box p {
+            margin: 0;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .boxes {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        /* Desktop breakpoint (>= 1024px): 3 boxes side by side */
-        @media (min-width: 1024px) {
-            .badge-mobile { display: none; }
-            .badge-tablet { display: none; }
-            .badge-desktop { display: inline-block; }
+        @media (min-width: 900px) {
+            h1 {
+                font-size: 34px;
+            }
 
-            .box {
-                width: calc((100% - 40px) / 3);
+            p {
+                font-size: 17px;
+            }
+
+            .boxes {
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Task Navigation -->
-    <nav class="task-nav">
-        <a href="task0.html">Task 0: Typography</a>
-        <a href="task1.html" class="active">Task 1: Boxes Layout</a>
-        <a href="task2.html">Task 2: Bootstrap Grid</a>
-        <a href="task3.html">Task 3: Bootstrap Navbar</a>
-        <a href="index.html">Task 4: Portfolio</a>
-    </nav>
+    <div class="container">
+        <h1>Task 1. Responsive Layout with Media Queries</h1>
+        <p><strong>Student:</strong> Aruzhan Abdrakhmanova | <strong>Group:</strong> IT-2501</p>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="student-header">
-            <strong>Assignment #3: Part 1 - Task 1</strong> | Aruzhan Abdrakhmanova (Group IT-2501)
-        </div>
-
-        <span class="breakpoint-badge badge-mobile">Current Screen: Mobile View (&lt; 768px) &rarr; Stacked</span>
-        <span class="breakpoint-badge badge-tablet">Current Screen: Tablet View (768px - 1023px) &rarr; 2 in a row</span>
-        <span class="breakpoint-badge badge-desktop">Current Screen: Desktop View (&ge; 1024px) &rarr; 3 side by side</span>
-
-        <h1>Responsive Layout with Pure Media Queries</h1>
-        <p class="lead">
-            This layout uses only CSS media queries without any CSS frameworks. 
-            On desktop screens all three boxes are placed side by side. On tablets, two boxes occupy the first row and one wraps to the second row. On mobile screens, all boxes are stacked vertically.
-        </p>
-
-        <div class="box-container">
+        <div class="boxes">
             <div class="box">
-                <span class="box-badge">Box 1</span>
-                <h3>Mobile First Concept</h3>
-                <p>
-                    Designing with a mobile-first approach ensures that core content is loaded cleanly on small screens, then progressively enhanced for larger viewports.
-                </p>
+                <h3>Box 1</h3>
+                <p>Pure CSS media queries layout without Bootstrap.</p>
             </div>
-
             <div class="box">
-                <span class="box-badge">Box 2</span>
-                <h3>CSS Media Queries</h3>
-                <p>
-                    Using <code>@media</code> rules allows developers to control layout properties such as width and flex wrapping based on viewport dimensions.
-                </p>
+                <h3>Box 2</h3>
+                <p>On tablet screens, two boxes display per row.</p>
             </div>
-
             <div class="box">
-                <span class="box-badge">Box 3</span>
-                <h3>Responsive Grid Behavior</h3>
-                <p>
-                    By calculating percentage widths with flexbox, items naturally wrap and fill available space without horizontal scrolling.
-                </p>
+                <h3>Box 3</h3>
+                <p>On desktop screens, all three boxes display side by side.</p>
             </div>
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
