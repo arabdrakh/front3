@@ -1,102 +1,65 @@
-# Assignment #3: Responsive Web Design (Media Queries + Bootstrap Grid)
+# Assignment 3
 
-**Course:** Web Technologies Front-End Development  
-**Student Name:** Aruzhan Abdrakhmanova  
+**Name:** Aruzhan Abdrakhmanova  
 **Group:** IT-2501  
-**University:** Astana IT University  
 
----
+## Tasks
 
-## 📌 Project Overview
+**Task 0. Responsive Typography:**  
+Created a webpage with headings and paragraphs. Media queries change the font sizes for mobile, tablet, and desktop screens
+![alt text](image-3.png)
 
-All assignment tasks are implemented in a single unified file `index.html` with an embedded `<style>` stylesheet. The project follows a **pink and black** color palette, using only named CSS color keywords (`pink`, `black`, `white`, `lightpink`, `hotpink`, `deeppink`).
 
-### 📁 File Structure
+**Task 1. Responsive Layout with Media Queries:**  
 
-```text
-front3/
-├── index.html          # All tasks in one unified responsive file
-├── screenshots/        # Screenshots for desktop, tablet, and mobile
-│   ├── desktop.png
-│   ├── tablet.png
-│   └── mobile.png
-└── README.md           # Assignment Report
-```
+Mobile: boxes are stacked vertically.
+![alt text](image-2.png)
 
----
 
-## 📋 Assignment Tasks
+Tablet: two boxes are displayed in a row.
+![alt text](image-1.png)
 
-### Part 1. Media Queries
 
-- **Task 0. Responsive Typography:**  
-  Headings (`h1`, `h2`) and paragraphs (`p`) scale dynamically via CSS media queries:
-  - Mobile (< 600px): small font
-  - Tablet (≥ 600px): medium font
-  - Desktop (≥ 900px): larger font
+Desktop: three boxes are displayed in a row.
+![alt text](image.png) 
 
-- **Task 1. Responsive Layout with Media Queries:**  
-  Three boxes built strictly using pure CSS Media Queries and CSS Grid (no Bootstrap):
-  - Desktop (≥ 900px): all 3 boxes side by side (`1fr 1fr 1fr`)
-  - Tablet (600px – 899px): 2 boxes on the first row, 1 on the second row (`1fr 1fr`)
-  - Mobile (< 600px): stacked vertically (`1fr`)
 
-### Part 2. Bootstrap Grid System
 
-- **Task 2. Bootstrap Responsive Columns:**  
-  Built using Bootstrap’s 12-column grid (`col-12 col-md-6 col-lg-4`):
-  - Desktop: 4 columns each (3 equal parts in one row)
-  - Tablet: 2 columns on first row, 1 on second row
-  - Mobile: stacked vertically (12 columns each)
+**Task 2. Bootstrap Responsive Columns:**  
+   Bootstrap's 12-column grid:
+Mobile: each column takes 12 columns.
+![alt text](image-6.png)
 
-- **Task 3. Bootstrap Navigation Bar:**  
-  Responsive navbar at the top of the page:
-  - Logo on the left (`Aruzhan's Web`)
-  - Navigation links on the right (`ms-auto`)
-  - Collapses into a hamburger menu button on smaller screens (< 768px)
+Tablet: each column takes 6 columns.
+![alt text](image-5.png)
 
-### Part 3. Combined Project
 
-- **Task 4. Responsive Portfolio Page:**  
-  - Header with Bootstrap navbar
-  - Left side (`col-lg-8`): Portfolio projects arranged in Bootstrap grid (`col-md-6`)
-  - Right side (`col-lg-4`): Sidebar with student info and `.extra-info` element
-  - Element visibility via Media Queries: `.extra-info` is hidden on mobile (`display: none;`) and shown on tablet/desktop via `display: block;`
-  - Footer across the bottom
+Desktop: each column takes 4 columns.
+![alt text](image-4.png)
 
----
 
-## 📸 Screenshots
+ **Task 3. Bootstrap Navigation Bar:**  
+  Desktop
+  ![alt text](image-7.png)
 
-### 1. Desktop View (≥ 900px)
-![Desktop View](screenshots/desktop.png)
+  Tablet
+  ![alt text](image-8.png)
 
-### 2. Tablet View (600px – 899px)
-![Tablet View](screenshots/tablet.png)
 
-### 3. Mobile View (< 600px)
-![Mobile View](screenshots/mobile.png)
+  Mobile
+  ![alt text](image-9.png)
 
----
 
-## 📝 Brief Summary of Work Process
+ **Task 4. Responsive Portfolio Page:**  
+  ![alt text](image-10.png)
 
-1. **Architecture Consolidation:**  
-   Unified all tasks into a single clean `index.html` file, removing redundant external stylesheets and separate pages.
-2. **Color Palette & Styling:**  
-   Applied a pink-and-black color scheme using only CSS named color keywords (`pink`, `black`, `white`, `lightpink`, `hotpink`, `deeppink`).
-3. **Responsive Implementation:**  
-   - Implemented pure CSS media queries for font scaling (Task 0) and 3-box grid layout (Task 1).
-   - Applied Bootstrap’s 12-column grid system for columns (Task 2) and collapsible navbar (Task 3).
-   - Integrated both techniques in Task 4, using `display: none` / `display: block` for the `.extra-info` element visibility.
-4. **Testing & Verification:**  
-   Verified responsiveness across desktop (1200px), tablet (800px), and mobile (420px) viewports and captured screenshots for documentation.
 
----
 
-## 📚 References & Resources
+## Work Process
 
-1. Abitova G.A., *Web technologies Front-End Development. Part 1*, 2022.
-2. [Bootstrap 5.3 Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-3. [MDN Web Docs - Responsive Design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design)
-4. [W3Schools - CSS Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
+All five tasks are organized on a single index.html page, with custom styles in an internal CSS block. Bootstrap 5.3.3 is loaded from a CDN and provides the grid utilities and interactive navigation behavior. 
+
+CSS media queries adjust the heading and paragraph sizes at the 600px and 900px breakpoints. The CSS Grid layout changes from one column on small screens to two columns at 600px and three columns at 900px. Bootstrap’s 12-column grid displays one column on small screens, two columns from the md breakpoint, and three columns from the lg breakpoint. The responsive navbar collapses on smaller screens and expands from the md breakpoint. On the portfolio page, Bootstrap’s grid places the project cards beside an About Me sidebar on wider screens, while the .extra-info` element appears from 600px.
+
+
+
