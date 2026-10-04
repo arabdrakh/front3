@@ -2,6 +2,8 @@
 
 **Name:** Aruzhan Abdrakhmanova  
 **Group:** IT-2501  
+**Site** https://arabdrakh.github.io/front3/
+
 
 ## Tasks
 
